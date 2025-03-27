@@ -1,0 +1,139 @@
+/* declaring colors as variables for repetative use*/
+:root {
+  --primary-color: #322855;
+  --secondary-color: #9f86c0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+h2 {
+  color: var(--primary-color);
+}
+
+/* change the radio button color to purple to match theme*/
+input[type="radio"] {
+  accent-color: purple;
+}
+
+img {
+  width: 5rem;
+  margin-right: 1rem;
+}
+/* moving cart animation on click */
+.expanded .cart-container {
+  position: relative;
+  animation: moveCart 2s linear infinite alternate;
+}
+.cart-container p {
+  color: white;
+  background-color: var(--primary-color);
+  padding: 4px 9px;
+  width: fit-content;
+  border-radius: 1rem;
+  position: absolute;
+  margin-top: -5rem;
+  margin-left: 2rem;
+}
+.free-delivery {
+  color: var(--primary-color);
+}
+.container {
+  width: 400px;
+  margin: 4rem auto;
+}
+.bottom-container {
+  display: flex;
+  justify-content: space-between;
+}
+.box {
+  border: 2px solid var(--secondary-color);
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: justify;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.expanded {
+  border: 3px solid var(--primary-color);
+  background-color: #f5e6ff;
+}
+.details {
+  display: none;
+  margin-top: 10px;
+}
+
+/* when expanded class added to the element then show the details */
+.expanded .details {
+  display: block;
+}
+
+.most-popular {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 3px 8px;
+  font-size: 12px;
+  border-radius: 5px;
+  animation: popUp 1.5s ease-in-out infinite;
+}
+.discount {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 3px 6px;
+  font-size: 12px;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+.price {
+  font-size: 18px;
+  font-weight: bold;
+}
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+  font-size: 14px;
+}
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.btn:hover {
+  opacity: 90%;
+}
+
+/* popup animation for most popular badge  */
+@keyframes popUp {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+/* cart animation */
+@keyframes moveCart {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(10px) rotate(5deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
